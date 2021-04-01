@@ -12,7 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <!-- SMTP and Telegram -->
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Send -->
     <script type="text/javascript">
         function sendmessage() {
             var message1 = String(document.getElementById("message1").value);
@@ -55,6 +56,11 @@
                 Body: "Hi Jane, here's a potential client," + "<br>Request made: " + dateNow + "<br>Name: " + message1 + "<br/>Email: " + message2 + "<br/>Phone: " + message3 + message4 + "<br/>Session: " + message5 + "<br/>Loan Status: " + message6
             });
             alert("Success! Your seat booking is on queue! Our office will send you a confirmation of your registration, Zoom link and instructions. See you soon!");
+            Swal.fire(
+                '&#128077; Yes! Your seat booking is on queue!',
+                'Our office will send you a confirmation of your registration, Zoom link and instructions.<br>See you soon!',
+                'success'
+            );
         }
     </script>
     <!-- Clock -->
