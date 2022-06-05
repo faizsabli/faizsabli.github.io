@@ -8,7 +8,9 @@
     <title>Bweepo - Freshly Different.</title>
     <!-- Global Style-->
     <style>
-        * {
+        html,
+        input {
+            background-color: #fefefe;
             --color-0: #ffffff;
             --color-1: #eeeeee;
             --color-2: #dddddd;
@@ -35,94 +37,159 @@
             --color-primary-7: #966888;
             --color-primary-8: #966777;
             --color-primary-9: #966666;
+            color: var(--color-14);
+        }
+
+        @media screen and (prefers-color-scheme: dark) {
+
+            html,
+            input {
+                background-color: #222222;
+                --color-15: #ffffff;
+                --color-14: #eeeeee;
+                --color-13: #dddddd;
+                --color-12: #cccccc;
+                --color-11: #bbbbbb;
+                --color-10: #aaaaaa;
+                --color-9: #999999;
+                --color-8: #888888;
+                --color-7: #777777;
+                --color-6: #666666;
+                --color-5: #555555;
+                --color-4: #444444;
+                --color-3: #333333;
+                --color-2: #222222;
+                --color-1: #111111;
+                --color-0: #000000;
+                --color-primary-0: #966fff;
+                --color-primary-1: #966eee;
+                --color-primary-2: #966ddd;
+                --color-primary-3: #966ccc;
+                --color-primary-4: #966bbb;
+                --color-primary-5: #966aaa;
+                --color-primary-6: #966999;
+                --color-primary-7: #966888;
+                --color-primary-8: #966777;
+                --color-primary-9: #966666;
+                color: var(--color-14);
+            }
         }
     </style>
 
     <style>
         html,
-        body,
         input {
             font-size: 0.95rem;
-            color: var(--color-12);
             font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif
         }
-        
+
         .hidescrollbar {
-            overflow: scroll;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            overflow: auto;
         }
-        
+
+        /* width */
         .hidescrollbar::-webkit-scrollbar {
-            display: none;
+            height: 0.45rem;
         }
-        
+
+        /* Track */
+        .hidescrollbar::-webkit-scrollbar-track {
+            border-radius: 0.3rem;
+        }
+
+        /* Handle */
+        .hidescrollbar::-webkit-scrollbar-thumb {
+            background: rgba(150, 150, 150, 0.25);
+            border-radius: 0.3rem;
+        }
+
+        /* Handle on hover */
+        .hidescrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--color-8);
+        }
+
         .pm0 {
             padding: 0;
             margin: 0;
         }
-        
+
         .ptlr {
             padding: 0.5rem 0.5rem 0 0.5rem;
         }
-        
+
         .plr {
             padding: 0 0.5rem;
         }
-        
+
         .mb {
             margin-bottom: 1.5rem;
         }
-        
+
         .mlr5 {
             margin: 0 0.5rem;
         }
-        
+
         .ml5 {
             margin-left: 0.5rem;
         }
-        
+
         .mr5 {
             margin-right: 0.5rem;
         }
-        
+
         .width1000Center {
             width: 100%;
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .whitespace {
             white-space: nowrap;
         }
-        
+
         .flexrow {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
         }
-        
+
         .fill {
             flex-grow: 1;
         }
-        
+
         .center {
             justify-content: center;
             align-items: center;
         }
-        
+
         .vcenter {
             align-items: center;
         }
-        
+
         .vbaseline {
             align-items: baseline;
         }
-        
+
         .signup,
-        .login,
+        .login {
+            font-weight: 500;
+            border: 0.15rem solid var(--color-primary-3);
+            border-radius: 0.3rem;
+            color: var(--color-primary-2);
+            height: 2rem;
+            min-width: 4.5rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .signup:hover,
+        .login:hover {
+            background-color: var(--color-primary-5);
+            color: #ffffff;
+        }
+
         .search {
-            font-weight: bold;
+            font-weight: 500;
             border: 0.15rem solid var(--color-primary-3);
             border-radius: 0.3rem;
             color: var(--color-primary-2);
@@ -130,71 +197,87 @@
             min-width: 4.5rem;
             line-height: 1;
         }
-        
-        .signupasprocreator {
-            font-weight: bold;
+
+        .freesignup {
+            font-weight: 500;
             color: var(--color-primary-3);
+            cursor: pointer;
         }
-        
+
+        .freesignup:hover {
+            color: var(--color-15);
+        }
+
+        .area {
+            font-weight: 500;
+            color: var(--color-10);
+        }
+
         .reminder {
             font-size: 0.9rem;
             color: var(--color-9);
         }
-        
+
         .solat {
-            font-weight: bold;
+            font-weight: 500;
             color: var(--color-primary-2);
             height: 2rem;
             min-width: 9rem;
             line-height: 1;
         }
-        
+
         .logo {
             height: 2rem;
         }
-        
+
         .logo-search {
             height: 2rem;
             margin-right: 0.45rem;
         }
-        
+
         .ads-picture {
             border-radius: 0.3rem;
             margin-top: 0.45rem;
             width: 25%;
         }
-        
+
         @media (max-width: 750px) {
             .ads-picture {
                 width: 33.33%;
             }
         }
-        
+
         @media (max-width: 500px) {
             .ads-picture {
                 width: 50%;
             }
         }
-        
+
         .text-search-summary {
             font-size: 1rem;
             line-height: 1.45;
             text-align: justify;
         }
-        
+
         .applink {
-            font-weight: bold;
+            font-weight: 500;
             border: 0.15rem solid var(--color-primary-3);
             border-radius: 3.4rem;
             color: var(--color-primary-2);
             height: 1.7rem;
             min-width: 4.35rem;
             line-height: 1;
+            cursor: pointer;
         }
-        
+
+        .applink:hover {
+            background-color: var(--color-primary-5);
+            color: #ffffff;
+        }
+
         .searchbox {
             padding: 0 0.5rem;
-            font-weight: 600;
+            font-weight: 500;
             border: 0.15rem solid var(--color-primary-3);
             border-radius: 0.3rem 0 0 0.3rem;
             height: 2.2rem;
@@ -202,7 +285,7 @@
             outline: none;
             line-height: 1;
         }
-        
+
         .search {
             border-radius: 0 0.3rem 0.3rem 0;
             background-color: var(--color-primary-3);
@@ -210,52 +293,56 @@
             height: 2.2rem;
             line-height: 1;
         }
-        
+
         .specifier {
-            font-weight: bold;
+            font-weight: 500;
             border-bottom: 0.15rem solid var(--color-primary-3);
             color: var(--color-primary-2);
             height: 1.7rem;
             min-width: 4.35rem;
             line-height: 1;
+            cursor: pointer;
         }
-        
-        .active {
+
+        .active,
+        .specifier:hover {
             background-color: var(--color-primary-5);
             color: #ffffff;
             border: none;
         }
-        
-        .country {
-            color: var(--color-primary-3);
-            font-weight: bold;
-        }
-        
+
         .seemore {
             color: var(--color-primary-3);
-            font-weight: bold;
+            font-weight: 500;
             border: 0.15rem solid var(--color-primary-9);
             border-radius: 0.3rem;
             height: 2rem;
             min-width: 15rem;
             line-height: 1;
+            cursor: pointer;
         }
-        
+
+        .seemore:hover {
+            background-color: var(--color-1);
+        }
+
+        .learnmore {
+            color: var(--color-primary-3);
+            font-size: 0.85rem;
+        }
+
         .text-search-owner {
             color: var(--color-primary-5);
-            font-weight: 600;
+            font-weight: 500;
         }
-        
+
+        .info,
         .websitelink {
-            font-size: 0.9rem;
-        }
-        
-        .info {
             color: var(--color-9);
             font-size: 0.8rem;
             font-weight: 300;
         }
-        
+
         .divider {
             background-color: var(--color-primary-9);
             margin: 0 0.45rem;
@@ -263,13 +350,22 @@
             height: 0.6rem;
             border-radius: 0.3rem;
         }
-        
+
         .text-search-header {
-            font-weight: bold;
+            font-weight: 500;
             font-size: 1.16rem;
             padding: 0.3rem 0;
         }
-        
+
+        .button {
+            cursor: pointer;
+            border-radius: 0.3rem;
+        }
+
+        .button:hover {
+            outline: 2px solid var(--color-primary-3);
+        }
+
         * {
             /* outline: 1px solid red; */
         }
@@ -290,8 +386,15 @@
             <div class="flexrow vcenter mr5">
                 <img class="logo" src="/Bweepo Logo.png">
             </div>
-            <div class="fill flexrow vcenter mr5 hidescrollbar">
-                <div class="country">ASEAN</div>
+            <div class="fill flexrow mr5">
+                <div class="flexrow vcenter button">
+                    <div class="area mr5">Brunei
+                    </div>
+                    <span
+                        style="transform: rotate(-45deg); display: block; width: 0.2rem; height: 0.5rem; background-color: var(--color-primary-9);"></span>
+                    <span
+                        style="transform: rotate(45deg); display: block; width: 0.2rem; height: 0.5rem; background-color: var(--color-primary-9);"></span>
+                </div>
             </div>
             <div class="flexrow center">
                 <div class="flexrow center signup">
@@ -308,7 +411,7 @@
 
     <div class="ptlr">
         <form class="flexrow width1000Center whitespace hidescrollbar">
-            <input class="pm0 fill flexrow vcenter searchbox" type="text " placeholder="Bweepo Search ">
+            <input class="pm0 fill flexrow vcenter searchbox" type="text " placeholder="Bweepo Search">
             <div class="flexrow center search">Search</div>
         </form>
     </div>
@@ -320,17 +423,13 @@
     </div>
     <div class="ptlr">
         <div class="">
-            <div class="flexrow vbaseline width1000Center whitespace hidescrollbar">
-                <div class="whitespace">
-                    <div class="flexrow vbaseline">
-                        <div class="signupasprocreator">
-                            Free Sign Up
-                        </div>
-                        <div class="divider"></div>
-                        <div class="reminder">
-                            Start earning 50% ad revenue as Pro Content Creator in Bweepo.
-                        </div>
-                    </div>
+            <div class="flexrow vcenter width1000Center hidescrollbar">
+                <div class="freesignup whitespace">
+                    Free Sign Up
+                </div>
+                <div class="divider"></div>
+                <div class="reminder">
+                    Start earning 50% ad revenue as Pro Content Creator in Bweepo.
                 </div>
             </div>
         </div>
@@ -341,20 +440,24 @@
             <div class="info">Your 11 Bweepo Apps</div>
         </div>
     </div>
+
+    <style>
+
+    </style>
     <div class="ptlr">
         <div class="flexrow vcenter width1000Center whitespace hidescrollbar">
-            <div class="flexrow center mr5 applink ">Chat</div>
-            <div class="flexrow center mr5 applink ">Gram</div>
-            <div class="flexrow center mr5 applink ">Social</div>
-            <div class="flexrow center mr5 applink ">Tube</div>
-            <div class="flexrow center mr5 applink ">Shop</div>
-            <div class="flexrow center mr5 applink ">Wallet</div>
-            <div class="flexrow center mr5 applink ">Stream</div>
-            <div class="flexrow center mr5 applink ">Team</div>
-            <div class="flexrow center mr5 applink ">Work</div>
-            <div class="flexrow center mr5 applink ">Website</div>
-            <div class="flexrow center mr5 applink ">Advert</div>
-            <div class="flexrow center applink ">Setting</div>
+            <div class="flexrow center mr5 applink">Chat</div>
+            <div class="flexrow center mr5 applink">Gram</div>
+            <div class="flexrow center mr5 applink">Social</div>
+            <div class="flexrow center mr5 applink">Tube</div>
+            <div class="flexrow center mr5 applink">Shop</div>
+            <div class="flexrow center mr5 applink">Wallet</div>
+            <div class="flexrow center mr5 applink">Stream</div>
+            <div class="flexrow center mr5 applink">Team</div>
+            <div class="flexrow center mr5 applink">Work</div>
+            <div class="flexrow center mr5 applink">Website</div>
+            <div class="flexrow center mr5 applink">Advert</div>
+            <div class="flexrow center applink">Setting</div>
         </div>
     </div>
 
@@ -375,43 +478,47 @@
     </div>
 
     <div class="ptlr mb">
-        <div class="flexrow vcenter width1000Center whitespace hidescrollbar">
+        <div class="flexrow vcenter width1000Center">
             <div class="info">You searched: "Aple" - Did you mean "Apple"? - 142 hits in 0.09s</div>
         </div>
     </div>
     <div class="plr">
-        <div class="width1000Center hidescrollbar">
-            <div class="mb">
+        <div class="width1000Center">
+            <div class="mb button">
                 <div class="whitespace">
-                    <div class="flexrow vcenter">
+                    <div class="flexrow vcenter hidescrollbar">
                         <img class="logo-search" src="/Apple Logo.png">
-                        <div class="flexrow vbaseline">
-                            <div class="text-search-owner">
-                                Apple
+                        <div>
+                            <div class="flexrow vcenter">
+                                <div class="text-search-owner">
+                                    Apple
+                                </div>
                             </div>
-                            <div class="divider"></div>
-                            <div class="websitelink">
-                                apple.bpo
-                            </div>
-                            <div class="divider"></div>
-                            <div class="info">
-                                sponsored
+                            <div class="flexrow vcenter">
+                                <div class="info">
+                                    sponsored
+                                </div>
+                                <div class="divider"></div>
+                                <div class="websitelink">
+                                    apple.bpo
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="flexrow vcenter">
                         <img class="ads-picture" src="/Macbook Pro.jpg">
-                        <!-- <img class="ads-picture" src="/Macbook Pro.jpg"> -->
                     </div>
                     <div class="text-search-header">
                         Macbook Pro
                     </div>
                 </div>
                 <div class="text-search-summary">
-                    The most powerful MacBook Pro ever is here. With the blazing-fast M1 Pro or M1 Max chip — the first Apple silicon designed for pros — you get groundbreaking performance and... <span style="color: var(--color-primary-3)">See More</span>
+                    The most powerful MacBook Pro ever is here. With the blazing-fast M1 Pro or M1 Max chip — the first
+                    Apple silicon designed for pros — you get groundbreaking performance and...
+                    <span class="learnmore whitespace">Learn More</span>
                 </div>
             </div>
-            <div class="mb">
+            <div class="mb button">
                 <div class="whitespace">
                     <div class="flexrow vcenter">
                         <div class="flexrow vbaseline">
@@ -429,10 +536,11 @@
                     </div>
                 </div>
                 <div class="text-search-summary">
-                    Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, Check out the all-new Mac Studio, MacBook Pro...
+                    Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple
+                    TV, plus explore accessories, entertainment, Check out the all-new Mac Studio, MacBook Pro...
                 </div>
             </div>
-            <div class="mb">
+            <div class="mb button">
                 <div class="whitespace">
                     <div class="flexrow vbaseline">
                         <div class="text-search-owner">
@@ -448,10 +556,12 @@
                     </div>
                 </div>
                 <div class="text-search-summary">
-                    Apple Inc. is an American multinational technology company that specializes in consumer electronics, software and online services headquartered in Cupertino, Number of employees: 154,000 (2021), Revenue: US$365.82 billion (2021), Number...
+                    Apple Inc. is an American multinational technology company that specializes in consumer electronics,
+                    software and online services headquartered in Cupertino, Number of employees: 154,000 (2021),
+                    Revenue: US$365.82 billion (2021), Number...
                 </div>
             </div>
-            <div class="mb">
+            <div class="mb button">
                 <div class="whitespace">
                     <div class="flexrow vbaseline">
                         <div class="text-search-owner">
@@ -470,7 +580,7 @@
                     The latest Tweets from Apple (@Apple). https://t.bpo/4dZx1rem2Q. Cupertino, CA...
                 </div>
             </div>
-            <div class="mb">
+            <div class="mb button">
                 <div class="whitespace">
                     <div class="flexrow vbaseline">
                         <div class="text-search-owner">
@@ -486,10 +596,12 @@
                     </div>
                 </div>
                 <div class="text-search-summary">
-                    Apple, Inc. engages in the design, manufacture, and sale of smartphones, personal computers, tablets, wearables and accessories, and other variety of products such as iPhone, iPad, Apple Watch, Mac, and...
+                    Apple, Inc. engages in the design, manufacture, and sale of smartphones, personal computers,
+                    tablets, wearables and accessories, and other variety of products such as iPhone, iPad, Apple Watch,
+                    Mac, and...
                 </div>
             </div>
-            <div class="mb">
+            <div class="mb button">
                 <div class="whitespace">
                     <div class="flexrow vbaseline">
                         <div class="text-search-owner">
@@ -512,10 +624,12 @@
     </div>
     <div class="mb">
         <div class="flexrow center width1000Center whitespace hidescrollbar">
-            <div class="flexrow center seemore ">
-                <span style="transform: rotate(-45deg); display: block; width: 0.2rem; height: 0.5rem; background-color: var(--color-primary-9); "></span>
-                <span style="transform: rotate(45deg); display: block; width: 0.2rem; height: 0.5rem; background-color: var(--color-primary-9); "></span>
-                <div style="padding-left: 0.5rem; ">See More</div>
+            <div class="flexrow center seemore">
+                <span
+                    style="transform: rotate(-45deg); display: block; width: 0.2rem; height: 0.5rem; background-color: var(--color-primary-9);"></span>
+                <span
+                    style="transform: rotate(45deg); display: block; width: 0.2rem; height: 0.5rem; background-color: var(--color-primary-9);"></span>
+                <div style="padding-left: 0.5rem;">See More</div>
             </div>
         </div>
     </div>
